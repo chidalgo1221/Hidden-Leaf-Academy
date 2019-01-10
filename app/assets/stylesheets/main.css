@@ -1,0 +1,40 @@
+body{
+    background-color: orangered;
+}
+
+#space{
+    margin: 50px 0 0 50px;
+    top: 50%;
+  
+  }
+
+  .button_color{
+      background-color: black;
+      color: antiquewhite;
+      height: 150px;
+      width: 200px;
+  }
+
+  .navs {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+    font-family: arial;
+  }
+  .link:hover {
+    background-color: silver;
+  }
+  .link {
+    display:inline-block;
+    color:white;
+    text-align: center;
+    padding: 16px 20px;
+    text-decoration: none;
+    float: left;
+  }
+
+  p{
+      font-size: 44;
+  }

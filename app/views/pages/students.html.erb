@@ -1,0 +1,42 @@
+<header>    
+        <center>
+        <img src="https://i.pinimg.com/originals/a4/f8/f6/a4f8f61b20234ca9323dab3e0091ec18.png" width="10%">
+        </center>
+        <ul class="navs">
+            <li><a href="/home" class="link">Home</a></li>
+            <li><a href="/courses" class="link">Courses</a></li>
+            <li><a href="/instructors" class="link">Instructors</a></li>
+            <li><a href="/students" class="link">Students</a></li>
+            <a class="btn btn-primary" href="logout">Logout</a>
+
+         </ul>
+    </header>
+    <br>
+    <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Education Level</th>
+        <th scope="col">Birthday</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @students.each do |students| %>
+      <tr>
+        <td><%=students.first_name%></td>
+        <td><%=students.last_name%></td>
+        <td><%=students.education_level%></td>
+        <td><%=students.age%></td>
+      </tr>
+    <%end%>
+    </tbody>
+  </table>
+  
+<%= form_tag("/students", method: "POST") do %>
+    <%= text_field(:student, :first_name) %>
+    <%= text_field(:student, :last_name) %>
+    <%= text_field(:student, :education_level) %>
+    <%= date_field(:student, :age) %>
+    <%= submit_tag("Add Student") %>
+  <% end %>
