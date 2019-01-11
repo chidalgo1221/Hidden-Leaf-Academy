@@ -18,12 +18,12 @@ class PagesController < ApplicationController
   def instructors
   @instructors=Instructor.all
     def create
-      new_instructors = Instructors.create(
+      new_instructors = Instructor.create(
         first_name: params[:instructors][:first_name],
         last_name: params[:instructors][:last_name],
         salary: params[:instructors][:salary],
         age: params[:instructors][:age],
-        education_level: params[instructors][education_level])
+        education_level: params[:instructors][:education_level])
         redirect_to '/instructors'
 
     end
