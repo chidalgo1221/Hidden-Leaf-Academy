@@ -1,4 +1,4 @@
-<header>    
+<header>
         <center>
         <img src="https://i.pinimg.com/originals/a4/f8/f6/a4f8f61b20234ca9323dab3e0091ec18.png" width="10%">
         </center>
@@ -12,3 +12,24 @@
          </ul>
     </header>
     <br>
+<table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Total Hours</th>
+
+      </tr>
+    </thead>
+    <tbody>
+    <% @courses.each do |courses| %>
+      <tr>
+        <td><%=courses.name%></td>
+      </tr>
+    <%end%>
+    </tbody>
+  </table>
+
+<%= form_tag("/courses", method: "POST") do %>
+    <%= text_field(:courses, :name) %>
+    <%= submit_tag("Add Course") %>
+  <% end %>

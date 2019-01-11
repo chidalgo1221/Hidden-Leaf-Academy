@@ -6,14 +6,17 @@ class PagesController < ApplicationController
   end
 
   def courses
+  @courses=Course.all
     def create
       new_courses = Courses.create(
         name: params[:courses][:name],
         total_hours: params[:courses][:total_hours])
+        redirect_to '/courses'
     end
   end
 
   def instructors
+  @instructors=Instructor.all
     def create
       new_instructors = Instructors.create(
         first_name: params[:instructors][:first_name],
@@ -21,6 +24,8 @@ class PagesController < ApplicationController
         salary: params[:instructors][:salary],
         age: params[:instructors][:age],
         education_level: params[instructors][education_level])
+        redirect_to '/instructors'
+
     end
   end
 
